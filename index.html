@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreamStore - Netflix Premium 4K Murah, Garansi Penuh</title>
-  <meta name="description" content="Beli akun Netflix Premium 4K UHD termurah & terpercaya. Garansi penuh, proses cepat 5 menit, CS fast response. Pilihan paket Shared & Private." />
+  <title>StreamStore — Demo UI toko akun langganan digital</title>
+  <meta name="description" content="StreamStore — Demo UI toko akun langganan digital" />
+  <meta name="robots" content="noindex, nofollow" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -57,6 +58,10 @@
       background-color: #0a0a0a;
       font-family: 'Poppins', sans-serif;
     }
+    /* Keep anchored sections clear of the fixed demo banner + navbar */
+    html {
+      scroll-padding-top: 7.5rem;
+    }
     /* Gradient text helper */
     .text-gradient {
       background: linear-gradient(90deg, #E50914 0%, #ff4d57 100%);
@@ -103,68 +108,75 @@
 <body class="text-white antialiased selection:bg-netflix-red selection:text-white">
 
   <!-- ===================== HEADER / NAVBAR ===================== -->
-  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <nav class="glass border-b border-white/5">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 md:h-20">
-          <!-- Logo -->
-          <a href="#home" class="flex items-center gap-2 group">
-            <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-netflix-red transition-transform group-hover:scale-110">
-              <i class="fa-solid fa-clapperboard text-white text-lg"></i>
-            </div>
-            <span class="text-xl font-extrabold tracking-tight">
-              Stream<span class="text-netflix-red">Store</span>
-            </span>
-          </a>
+  <div class="fixed top-0 inset-x-0 z-50">
+    <!-- Demo notice -->
+    <div class="bg-netflix-red text-white text-[11px] sm:text-xs font-medium text-center leading-snug px-4 py-2">
+      Ini demo tampilan. Bukan toko sungguhan. Semua harga, data, dan testimoni hanyalah contoh.
+    </div>
 
-          <!-- Desktop Nav -->
-          <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-            <a href="#paket" class="hover:text-netflix-red transition-colors">Paket</a>
-            <a href="#keunggulan" class="hover:text-netflix-red transition-colors">Keunggulan</a>
-            <a href="#testimoni" class="hover:text-netflix-red transition-colors">Testimoni</a>
-            <a href="#faq" class="hover:text-netflix-red transition-colors">Cara Order</a>
-            <a href="#faq" class="hover:text-netflix-red transition-colors">FAQ</a>
-          </div>
-
-          <!-- CTA + Mobile toggle -->
-          <div class="flex items-center gap-3">
-            <a href="#paket"
-              class="hidden sm:inline-flex items-center gap-2 bg-netflix-red hover:bg-netflix-red-dark px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors shadow-lg shadow-netflix-red/30">
-              <i class="fa-solid fa-bolt"></i>
-              Pesan Sekarang
+    <header id="navbar" class="relative transition-all duration-300">
+      <nav class="glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2 group">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-netflix-red transition-transform group-hover:scale-110">
+                <i class="fa-solid fa-clapperboard text-white text-lg"></i>
+              </div>
+              <span class="text-xl font-extrabold tracking-tight">
+                Stream<span class="text-netflix-red">Store</span>
+              </span>
             </a>
-            <!-- Mobile menu button -->
-            <button id="mobileMenuBtn" aria-label="Buka menu"
-              class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 transition-colors">
-              <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+              <a href="#paket" class="hover:text-netflix-red transition-colors">Paket</a>
+              <a href="#keunggulan" class="hover:text-netflix-red transition-colors">Keunggulan</a>
+              <a href="#testimoni" class="hover:text-netflix-red transition-colors">Testimoni</a>
+              <a href="#faq" class="hover:text-netflix-red transition-colors">Cara Order</a>
+              <a href="#faq" class="hover:text-netflix-red transition-colors">FAQ</a>
+            </div>
+
+            <!-- CTA + Mobile toggle -->
+            <div class="flex items-center gap-3">
+              <a href="#paket"
+                class="hidden sm:inline-flex items-center gap-2 bg-netflix-red hover:bg-netflix-red-dark px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors shadow-lg shadow-netflix-red/30">
+                <i class="fa-solid fa-bolt"></i>
+                Pesan Sekarang
+              </a>
+              <!-- Mobile menu button -->
+              <button id="mobileMenuBtn" aria-label="Buka menu"
+                class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Mobile menu -->
-      <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 glass">
-        <div class="px-4 py-4 space-y-1 text-sm font-medium text-gray-300">
-          <a href="#paket" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-tags w-5 text-netflix-red"></i> Paket
-          </a>
-          <a href="#keunggulan" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-star w-5 text-netflix-red"></i> Keunggulan
-          </a>
-          <a href="#testimoni" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-comment-dots w-5 text-netflix-red"></i> Testimoni
-          </a>
-          <a href="#faq" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-list-check w-5 text-netflix-red"></i> Cara Order & FAQ
-          </a>
-          <a href="#paket"
-            class="flex items-center justify-center gap-2 bg-netflix-red hover:bg-netflix-red-dark mt-2 py-3 rounded-lg font-semibold transition-colors">
-            <i class="fa-solid fa-bolt"></i> Pesan Sekarang
-          </a>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 glass">
+          <div class="px-4 py-4 space-y-1 text-sm font-medium text-gray-300">
+            <a href="#paket" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-tags w-5 text-netflix-red"></i> Paket
+            </a>
+            <a href="#keunggulan" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-star w-5 text-netflix-red"></i> Keunggulan
+            </a>
+            <a href="#testimoni" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-comment-dots w-5 text-netflix-red"></i> Testimoni
+            </a>
+            <a href="#faq" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-list-check w-5 text-netflix-red"></i> Cara Order & FAQ
+            </a>
+            <a href="#paket"
+              class="flex items-center justify-center gap-2 bg-netflix-red hover:bg-netflix-red-dark mt-2 py-3 rounded-lg font-semibold transition-colors">
+              <i class="fa-solid fa-bolt"></i> Pesan Sekarang
+            </a>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
+  </div>
 
   <!-- ===================== HERO SECTION ===================== -->
   <section id="home" class="hero-glow relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28">
@@ -180,7 +192,7 @@
             <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          Stok tersedia & proses aktif hari ini
+          Contoh tampilan — status stok bukan data nyata
         </div>
 
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
@@ -189,7 +201,7 @@
         </h1>
 
         <p class="mt-6 text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
-          Nikmati Netflix Premium dengan ribuan film & serial terlengkap dalam kualitas ultra tinggi.
+          Nikmati Netflix Premium dengan ribuan film &amp; serial terlengkap dalam kualitas ultra tinggi.
           Garansi penuh, proses cepat 5 menit, dan harga termurah di kelasnya.
         </p>
 
@@ -200,22 +212,22 @@
             <i class="fa-solid fa-tags group-hover:rotate-12 transition-transform"></i>
             Lihat Paket
           </a>
-          <a id="waHeroBtn" href="#" target="_blank" rel="noopener"
+          <a id="waHeroBtn" href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
             class="group inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 px-8 py-3.5 rounded-xl font-semibold text-base transition-all hover:scale-105 w-full sm:w-auto">
             <i class="fa-brands fa-whatsapp text-xl text-green-400"></i>
             Tanya via WA
           </a>
         </div>
 
-        <!-- Trust stats -->
+        <!-- Trust stats (example values) -->
         <div class="mt-14 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto">
           <div class="text-center">
-            <div class="text-2xl sm:text-3xl font-extrabold text-white">2.000+</div>
-            <div class="text-xs sm:text-sm text-gray-500 mt-1">Pelanggan Puas</div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-white">XX</div>
+            <div class="text-xs sm:text-sm text-gray-500 mt-1">Pelanggan (contoh)</div>
           </div>
           <div class="text-center border-x border-white/10">
-            <div class="text-2xl sm:text-3xl font-extrabold text-white">4.9<span class="text-netflix-red">★</span></div>
-            <div class="text-xs sm:text-sm text-gray-500 mt-1">Rating Penjualan</div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-white">XX<span class="text-netflix-red">★</span></div>
+            <div class="text-xs sm:text-sm text-gray-500 mt-1">Rating (contoh)</div>
           </div>
           <div class="text-center">
             <div class="text-2xl sm:text-3xl font-extrabold text-white">5 <span class="text-base text-gray-500">menit</span></div>
@@ -263,22 +275,22 @@
           </ul>
 
           <div class="mt-7 space-y-3">
-            <a data-wa data-pkg="1 Bulan Shared" data-price="Rp 35.000" href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
               class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-brands fa-whatsapp text-lg"></i> Pesan via WhatsApp
             </a>
-            <a data-shopee href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke Shopee"
               class="flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#d4421f] w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-solid fa-cart-shopping"></i> Beli via Shopee
             </a>
           </div>
         </article>
 
-        <!-- ===== Paket 2: 1 Bulan Private (BEST SELLER) ===== -->
+        <!-- ===== Paket 2: 1 Bulan Private (HIGHLIGHT) ===== -->
         <article class="reveal relative bg-netflix-gray-darker rounded-2xl border-2 border-netflix-red p-7 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-netflix-red/20 md:scale-105">
-          <!-- Best seller badge -->
+          <!-- Highlight badge -->
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-netflix-red text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg shadow-netflix-red/40 whitespace-nowrap flex items-center gap-1.5">
-            <i class="fa-solid fa-crown"></i> Best Seller
+            <i class="fa-solid fa-crown"></i> Paket Contoh
           </div>
           <div class="flex items-center justify-between mb-5 mt-2">
             <span class="inline-flex items-center gap-2 text-sm text-gray-400 font-medium">
@@ -302,11 +314,11 @@
           </ul>
 
           <div class="mt-7 space-y-3">
-            <a data-wa data-pkg="1 Bulan Private" data-price="Rp 150.000" href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
               class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-brands fa-whatsapp text-lg"></i> Pesan via WhatsApp
             </a>
-            <a data-shopee href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke Shopee"
               class="flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#d4421f] w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-solid fa-cart-shopping"></i> Beli via Shopee
             </a>
@@ -337,11 +349,11 @@
           </ul>
 
           <div class="mt-7 space-y-3">
-            <a data-wa data-pkg="3 Bulan Shared" data-price="Rp 95.000" href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
               class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-brands fa-whatsapp text-lg"></i> Pesan via WhatsApp
             </a>
-            <a data-shopee href="#" target="_blank" rel="noopener"
+            <a href="#" title="Tombol contoh, tidak terhubung ke Shopee"
               class="flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#d4421f] w-full py-3 rounded-xl font-semibold text-sm transition-colors">
               <i class="fa-solid fa-cart-shopping"></i> Beli via Shopee
             </a>
@@ -351,7 +363,7 @@
       </div>
 
       <p class="text-center text-sm text-gray-500 mt-8">
-        <i class="fa-solid fa-shield-halved text-netflix-red"></i> Semua transaksi aman. Pembayaran dilakukan setelah akun siap atau sesuai ketentuan marketplace.
+        <i class="fa-solid fa-circle-info text-amber-400"></i> Tombol WhatsApp dan Shopee di atas hanya contoh tampilan dan tidak terhubung ke toko mana pun.
       </p>
     </div>
   </section>
@@ -407,21 +419,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Heading -->
       <div class="text-center max-w-2xl mx-auto reveal">
-        <span class="text-netflix-red font-semibold text-sm tracking-widest uppercase">Kata Pelanggan</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Testimoni Pelanggan Kami</h2>
-        <p class="mt-4 text-gray-400">Ribuan pelanggan sudah menikmati layanan StreamStore. Ini sebagian cerita mereka.</p>
+        <span class="text-netflix-red font-semibold text-sm tracking-widest uppercase">Contoh Tampilan</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Contoh Testimoni</h2>
+        <p class="mt-4 text-gray-400">Nama dan cerita di bawah ini hanyalah ilustrasi untuk keperluan demo.</p>
 
-        <!-- Rating summary -->
+        <!-- Demo label -->
         <div class="mt-6 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-5 py-2">
-          <div class="flex items-center gap-0.5 text-amber-400">
-            <i class="fa-solid fa-star text-sm"></i>
-            <i class="fa-solid fa-star text-sm"></i>
-            <i class="fa-solid fa-star text-sm"></i>
-            <i class="fa-solid fa-star text-sm"></i>
-            <i class="fa-solid fa-star text-sm"></i>
-          </div>
-          <span class="text-sm font-semibold">4.9 / 5.0</span>
-          <span class="text-xs text-gray-500">dari 2.000+ ulasan</span>
+          <i class="fa-solid fa-circle-info text-amber-400"></i>
+          <span class="text-sm font-semibold">Contoh tampilan, bukan testimoni asli</span>
         </div>
       </div>
 
@@ -438,9 +443,9 @@
             Proses cepat banget cuma 3 menit! Bayar sore, sore juga udah nonton. Kualitas 4K-nya jelas, gak buffer sama sekali.
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-netflix-red to-netflix-red-dark font-bold text-sm shrink-0">DP</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-netflix-red to-netflix-red-dark font-bold text-sm shrink-0">A</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Dimas Pratama <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan A</div>
               <div class="text-xs text-gray-500">Paket 1 Bulan Private</div>
             </div>
           </figcaption>
@@ -456,9 +461,9 @@
             Garansi mantap! Pas akun ada kendala logout, hubungi CS langsung diganti baru tanpa ribet. Pelayanan top.
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 font-bold text-sm shrink-0">SR</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 font-bold text-sm shrink-0">B</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Siti Rahmawati <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan B</div>
               <div class="text-xs text-gray-500">Paket 1 Bulan Shared</div>
             </div>
           </figcaption>
@@ -474,9 +479,9 @@
             Murah & akun awet sampai habis masa aktif. Udah langganan 3 bulan shared, gak pernah kecewa. Bakal perpanjang lagi.
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 font-bold text-sm shrink-0">AW</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 font-bold text-sm shrink-0">C</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Andre Wijaya <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan C</div>
               <div class="text-xs text-gray-500">Paket 3 Bulan Shared</div>
             </div>
           </figcaption>
@@ -492,9 +497,9 @@
             Kualitas 4K UHD-nya keren banget di Smart TV rumah. Harga jauh lebih murah dari langganan resmi tapi fiturnya sama. Recommended!
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 font-bold text-sm shrink-0">PL</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 font-bold text-sm shrink-0">D</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Putri Lestari <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan D</div>
               <div class="text-xs text-gray-500">Paket 1 Bulan Private</div>
             </div>
           </figcaption>
@@ -510,9 +515,9 @@
             CS-nya fast response banget, ditanya tengah malam pun langsung dibales ramah. Pertama beli akun streaming online, ternyata gampang.
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 font-bold text-sm shrink-0">RM</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 font-bold text-sm shrink-0">E</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Rizki Maulana <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan E</div>
               <div class="text-xs text-gray-500">Paket 1 Bulan Shared</div>
             </div>
           </figcaption>
@@ -528,9 +533,9 @@
             Paket private worth it banget! Akun sendiri, bisa 4 layar bareng keluarga, harga tetap miring. Udah langganan tetap di sini.
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 font-bold text-sm shrink-0">DA</div>
+            <div class="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 font-bold text-sm shrink-0">F</div>
             <div class="min-w-0">
-              <div class="font-semibold text-sm flex items-center gap-1.5">Dewi Anggraini <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Pembeli Terverifikasi"></i></div>
+              <div class="font-semibold text-sm">Pelanggan F</div>
               <div class="text-xs text-gray-500">Paket 1 Bulan Private</div>
             </div>
           </figcaption>
@@ -540,7 +545,7 @@
 
       <!-- Bottom note -->
       <p class="text-center text-sm text-gray-500 mt-8 reveal">
-        <i class="fa-solid fa-shield-halved text-netflix-red"></i> Semua testimoni berasal dari pembeli yang telah melakukan transaksi nyata.
+        <i class="fa-solid fa-circle-info text-amber-400"></i> Ilustrasi di atas tidak mewakili pelanggan, pembelian, atau ulasan nyata.
       </p>
     </div>
   </section>
@@ -649,8 +654,8 @@
         <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-black/10 rounded-full blur-2xl"></div>
         <div class="relative">
           <h2 class="text-2xl sm:text-3xl font-extrabold">Siap Nonton Tanpa Batas Hari Ini?</h2>
-          <p class="mt-3 text-white/80 text-sm sm:text-base">Gabung bersama 2.000+ pelanggan yang sudah menikmati Netflix Premium 4K dengan harga termurah.</p>
-          <a id="waCtaBtn" href="#" target="_blank" rel="noopener"
+          <p class="mt-3 text-white/80 text-sm sm:text-base">Ini halaman demo. Tidak ada pesanan, pembayaran, atau pengiriman akun yang diproses.</p>
+          <a id="waCtaBtn" href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
             class="inline-flex items-center justify-center gap-2 bg-white text-netflix-red hover:bg-gray-100 px-8 py-3.5 rounded-xl font-bold text-base mt-6 transition-all hover:scale-105">
             <i class="fa-brands fa-whatsapp text-xl"></i> Pesan Sekarang via WhatsApp
           </a>
@@ -673,11 +678,11 @@
 
         <!-- Socials -->
         <div class="flex items-center gap-4">
-          <a id="waFooterBtn" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"
+          <a id="waFooterBtn" href="#" aria-label="Contoh tombol WhatsApp" title="Tombol contoh, tidak terhubung ke WhatsApp"
             class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-green-600 transition-colors">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Shopee"
+          <a href="#" aria-label="Contoh tombol Shopee" title="Tombol contoh, tidak terhubung ke Shopee"
             class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-[#EE4D2D] transition-colors">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
@@ -700,52 +705,15 @@
     </div>
   </footer>
 
-  <!-- ===================== FLOATING WHATSAPP BUTTON ===================== -->
-  <a id="waFloatBtn" href="#" target="_blank" rel="noopener"
+  <!-- ===================== FLOATING WHATSAPP BUTTON (CONTOH) ===================== -->
+  <a id="waFloatBtn" href="#" title="Tombol contoh, tidak terhubung ke WhatsApp"
     class="fixed bottom-5 right-5 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-2xl shadow-green-600/40 transition-all hover:scale-110 animate-float"
-    aria-label="Chat WhatsApp">
+    aria-label="Contoh tombol WhatsApp">
     <i class="fa-brands fa-whatsapp text-2xl"></i>
   </a>
 
   <!-- ===================== SCRIPTS ===================== -->
   <script>
-    /* =========================================================
-       KONFIGURASI — GANTI NILAI DI BAWAH INI SESUAI TOKO ANDA
-       ========================================================= */
-    const CONFIG = {
-      // Nomor WhatsApp admin (format internasional tanpa + dan tanpa 0 di depan)
-      // Contoh: 6281234567890
-      whatsappNumber: '6281234567890',
-      // Link toko Shopee Anda
-      shopeeShopUrl: 'https://shopee.co.id/streamstore',
-    };
-
-    /* ----- Build WhatsApp links with auto message ----- */
-    function buildWaLink(message) {
-      const encoded = encodeURIComponent(message);
-      return `https://wa.me/${CONFIG.whatsappNumber}?text=${encoded}`;
-    }
-
-    // General WhatsApp message (hero, CTA banner, footer, floating btn)
-    const generalMsg = 'Halo StreamStore, saya tertarik dengan paket Netflix Premium. Boleh minta info lebih lanjut?';
-    document.getElementById('waHeroBtn').href = buildWaLink(generalMsg);
-    document.getElementById('waCtaBtn').href = buildWaLink(generalMsg);
-    document.getElementById('waFooterBtn').href = buildWaLink(generalMsg);
-    document.getElementById('waFloatBtn').href = buildWaLink(generalMsg);
-
-    // Per-package WhatsApp links with auto message
-    document.querySelectorAll('[data-wa]').forEach(btn => {
-      const pkg = btn.getAttribute('data-pkg');
-      const price = btn.getAttribute('data-price');
-      const msg = `Halo StreamStore, saya tertarik memesan Paket Netflix Premium ${pkg} (${price}). Apakah masih tersedia?`;
-      btn.href = buildWaLink(msg);
-    });
-
-    // Shopee links
-    document.querySelectorAll('[data-shopee]').forEach(btn => {
-      btn.href = CONFIG.shopeeShopUrl;
-    });
-
     /* ----- Year in footer ----- */
     document.getElementById('year').textContent = new Date().getFullYear();
 
