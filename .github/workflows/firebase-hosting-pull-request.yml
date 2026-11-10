@@ -18,3 +18,5 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STREAMSTORE_WEB }}
           projectId: streamstore-web
+          # Channel preview kedaluwarsa 3 hari agar tidak menumpuk di kuota Hosting.
+          expires: 3d
