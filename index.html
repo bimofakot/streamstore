@@ -7,102 +7,14 @@
   <meta name="description" content="StreamStore — Demo UI toko akun langganan digital" />
   <meta name="robots" content="noindex, nofollow" />
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <script>
-    // Konfigurasi tema Tailwind dengan warna khas Netflix
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            netflix: {
-              red: '#E50914',
-              'red-dark': '#B20710',
-              black: '#0a0a0a',
-              'gray-dark': '#141414',
-              'gray-darker': '#181818',
-            }
-          },
-          fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
-          },
-          animation: {
-            'fade-up': 'fadeUp 0.7s ease-out forwards',
-            'float': 'float 6s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeUp: {
-              '0%': { opacity: '0', transform: 'translateY(30px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-12px)' },
-            },
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Base styles */
-    body {
-      background-color: #0a0a0a;
-      font-family: 'Poppins', sans-serif;
-    }
-    /* Keep anchored sections clear of the fixed demo banner + navbar */
-    html {
-      scroll-padding-top: 7.5rem;
-    }
-    /* Gradient text helper */
-    .text-gradient {
-      background: linear-gradient(90deg, #E50914 0%, #ff4d57 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    /* Hero glow background */
-    .hero-glow::before {
-      content: '';
-      position: absolute;
-      top: -10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(229, 9, 20, 0.18) 0%, transparent 65%);
-      z-index: 0;
-      pointer-events: none;
-    }
-    /* Scroll reveal default state */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Glassmorphism navbar */
-    .glass {
-      background: rgba(10, 10, 10, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #0a0a0a; }
-    ::-webkit-scrollbar-thumb { background: #E50914; border-radius: 5px; }
-  </style>
+  <!-- CSS statis hasil build; regenerasi: npx -y tailwindcss@3.4.14 -c tailwind.config.js -i styles.src.css -o styles.css --minify -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="text-white antialiased selection:bg-netflix-red selection:text-white">
@@ -713,67 +625,6 @@
   </a>
 
   <!-- ===================== SCRIPTS ===================== -->
-  <script>
-    /* ----- Year in footer ----- */
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* ----- Navbar scroll effect ----- */
-    const navbar = document.getElementById('navbar');
-    function onScrollNavbar() {
-      if (window.scrollY > 20) {
-        navbar.classList.add('shadow-2xl', 'shadow-black/50');
-      } else {
-        navbar.classList.remove('shadow-2xl', 'shadow-black/50');
-      }
-    }
-    window.addEventListener('scroll', onScrollNavbar);
-
-    /* ----- Mobile menu toggle ----- */
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = mobileBtn.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
-    });
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-xmark');
-      });
-    });
-
-    /* ----- FAQ accordion ----- */
-    document.querySelectorAll('.faq-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const panel = toggle.nextElementSibling;
-        const icon = toggle.querySelector('.fa-chevron-down');
-        const isOpen = !panel.classList.contains('hidden');
-        // Close all
-        document.querySelectorAll('.faq-panel').forEach(p => p.classList.add('hidden'));
-        document.querySelectorAll('.faq-toggle .fa-chevron-down').forEach(i => i.classList.remove('rotate-180'));
-        // Toggle current
-        if (!isOpen) {
-          panel.classList.remove('hidden');
-          icon.classList.add('rotate-180');
-        }
-      });
-    });
-
-    /* ----- Scroll reveal animation (IntersectionObserver) ----- */
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
