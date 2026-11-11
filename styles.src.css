@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gaya kustom sengaja diletakkan setelah utilities agar menang cascade. */
+body {
+  background-color: #0a0a0a;
+  font-family: 'Poppins', sans-serif;
+}
+/* Keep anchored sections clear of the fixed demo banner + navbar */
+html {
+  scroll-padding-top: 7.5rem;
+}
+/* Gradient text helper */
+.text-gradient {
+  background: linear-gradient(90deg, #E50914 0%, #ff4d57 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Hero glow background */
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.18) 0%, transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+/* Scroll reveal default state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Glassmorphism navbar */
+.glass {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #E50914; border-radius: 5px; }
