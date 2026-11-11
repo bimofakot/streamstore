@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎬 StreamStore — Landing Page Akun Netflix Premium
+# 🎬 StreamStore — Demo Landing Page Akun Netflix Premium
 
-### Jualan akun Netflix Premium 4K UHD dengan landing page yang cepat, modern, dan terpercaya.
+### Contoh landing page statis untuk jualan akun Netflix Premium 4K UHD.
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
@@ -17,9 +17,15 @@
 
 ## 📖 Tentang Project
 
-**StreamStore** adalah landing page statis yang dirancang khusus untuk berjualan akun **Netflix Premium 4K UHD** secara online. Dibangun dengan satu file `index.html` agar ringan, cepat, dan mudah di-deploy. Halaman ini menghadirkan tampilan bertema khas Netflix (hitam, abu-abu gelap, dan merah `#E50914`) yang bersih, modern, dan menimbulkan rasa percaya bagi calon pembeli.
+**StreamStore** adalah demo landing page statis bertema Netflix (hitam, abu-abu gelap, dan merah `#E50914`). Halaman menampilkan hero, katalog paket, keunggulan layanan, testimoni contoh, FAQ, dan tombol pesanan.
 
-Pembeli dapat langsung memesan via **WhatsApp** (dengan pesan otomatis sesuai paket) atau melalui **Shopee**, sehingga proses konversi jadi lebih cepat tanpa perlu aplikasi tambahan.
+Demo ini **belum terhubung ke toko mana pun**:
+
+- Semua tombol WhatsApp dan Shopee memakai `href="#"`.
+- Angka pelanggan, rating, stok, dan testimoni adalah contoh, bukan data nyata.
+- Tidak ada checkout, pembayaran, atau data pesanan.
+
+Gunakan halaman ini sebagai titik awal, lalu ganti tautan dan data contoh sebelum dipakai berjualan.
 
 > 🔗 **Demo Live:** <https://netflix.massbim.my.id>
 
@@ -29,11 +35,11 @@ Pembeli dapat langsung memesan via **WhatsApp** (dengan pesan otomatis sesuai pa
 
 | Fitur | Deskripsi |
 | --- | --- |
-| 🦸 **Hero Section** | Judul menarik, deskripsi penawaran, dan dua CTA utama ("Lihat Paket" & "Tanya via WA") lengkap dengan statistik kepercayaan. |
-| 📦 **Katalog Paket** | 3 kartu paket: **Shared 1 Bulan** (Rp 35.000), **Private 1 Bulan** (Rp 150.000 — *Best Seller*), dan **Shared 3 Bulan** (Rp 95.000), masing-masing dengan rincian fitur & harga. |
-| 💬 **Direct Order Integration** | Tombol "Pesan via WhatsApp" yang otomatis mengisi pesan sesuai paket, dan tombol "Beli via Shopee" yang mengarah ke toko. |
-| 🛡️ **Keunggulan Layanan** | Section USP: Garansi Full, Proses Cepat 5 menit, dan CS Fast Response. |
-| ⭐ **Testimoni Pelanggan** | 6 kartu testimoni dengan rating bintang 5, avatar inisial, dan badge "Pembeli Terverifikasi". |
+| 🦸 **Hero Section** | Judul, deskripsi penawaran, dua CTA, dan statistik contoh. |
+| 📦 **Katalog Paket** | Tiga kartu paket contoh dengan rincian fitur dan harga. |
+| 💬 **Tombol Pesanan** | Tombol WhatsApp dan Shopee contoh; tautan diisi manual di `index.html`. |
+| 🛡️ **Keunggulan Layanan** | Section USP: garansi, proses cepat, dan CS responsif. |
+| ⭐ **Testimoni Contoh** | Enam kartu testimoni contoh dengan rating bintang. |
 | ❓ **FAQ Accordion** | 4 langkah cara order + 5 pertanyaan interaktif yang bisa diklik. |
 | 📱 **Fully Responsive** | Tampil optimal di mobile maupun desktop, dengan menu hamburger & layout adaptif. |
 | 🎨 **Animasi Halus** | Scroll-reveal, hover effect, floating WhatsApp button, dan navbar dinamis. |
@@ -42,23 +48,14 @@ Pembeli dapat langsung memesan via **WhatsApp** (dengan pesan otomatis sesuai pa
 
 ## 🛠️ Tech Stack
 
-### Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
-![FontAwesome](https://img.shields.io/badge/FontAwesome-528DD7?logo=fontawesome&logoColor=white)
-![Google Fonts](https://img.shields.io/badge/Google_Fonts-Poppins-4285F4?logo=googlefonts&logoColor=white)
+- **HTML5** — markup halaman tunggal di `index.html`.
+- **Tailwind CSS 3.4** — kelas utilitas dikompilasi menjadi `styles.css` statis; tidak memakai Play CDN.
+- **CSS kustom** — ditulis di `styles.src.css` setelah direktif `@tailwind`.
+- **JavaScript vanilla** — perilaku halaman di `app.js`.
+- **FontAwesome 6** dan **Google Fonts (Poppins)** — dimuat dari CDN.
+- **Firebase Hosting** — hosting statis dan SSL.
 
-- **HTML5** — struktur semantik halaman tunggal.
-- **Tailwind CSS** (via CDN) — utility-first styling dengan konfigurasi warna Netflix inline.
-- **FontAwesome 6** — ikon pendukung (WhatsApp, Shopee, bintang, dll).
-- **Google Fonts (Poppins)** — tipografi modern dan bersih.
-
-### Deployment & Hosting
-![Firebase](https://img.shields.io/badge/Firebase_Hosting-FFCA28?logo=firebase&logoColor=black)
-![Domainesia](https://img.shields.io/badge/Domain-Domainesia-1E63D5?logoColor=white)
-
-- **Firebase Hosting** — hosting statis global dengan SSL otomatis & CDN cepat.
-- **Domainesia** — custom subdomain `netflix.massbim.my.id` yang terhubung ke Firebase.
+Repo ini tidak memakai `package.json`, `node_modules`, atau langkah build di CI. Tailwind CLI hanya dipakai saat mengubah CSS.
 
 ---
 
@@ -78,24 +75,35 @@ python -m http.server 5500
 
 Lalu buka <http://localhost:5500> di browser.
 
-### 2. Mengganti Nomor WhatsApp & Link Shopee
+### 2. Mengganti Tautan WhatsApp dan Shopee
 
-Buka file `index.html`, lalu cari objek `CONFIG` di bagian `<script>` (sekitar akhir file) dan ubah nilainya:
+Semua tombol pesanan masih memakai `href="#"`. Tidak ada objek `CONFIG`; ubah `href` langsung di `index.html` pada:
 
-```js
-const CONFIG = {
-  // Nomor WhatsApp admin (format internasional tanpa "+" dan tanpa "0" di depan)
-  // Contoh: 6281234567890
-  whatsappNumber: '6281234567890',
+- `#waHeroBtn` di hero;
+- dua tombol di setiap kartu paket (WhatsApp dan Shopee);
+- `#waCtaBtn` di CTA bawah;
+- tombol WhatsApp dan Shopee di footer;
+- `#waFloatBtn` di tombol mengambang.
 
-  // Link toko Shopee Anda
-  shopeeShopUrl: 'https://shopee.co.id/streamstore',
-};
+Contoh:
+
+```html
+<a id="waHeroBtn" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20paket%20Netflix">
 ```
 
-> Setelah diubah, semua tombol WhatsApp (hero, tiap paket, CTA banner, footer, dan floating button) serta tombol Shopee akan otomatis mengarah ke link & nomor baru. Tidak perlu mengubah satu per satu.
+Ganti juga angka contoh dan teks testimoni di `index.html` agar sesuai toko Anda.
 
-### 3. Deploy (Ulang) ke Firebase Hosting
+### 3. Regenerasi CSS Statis
+
+Jalankan perintah ini setiap kali kelas Tailwind di `index.html` atau `app.js` berubah:
+
+```bash
+npx -y tailwindcss@3.4.14 -c tailwind.config.js -i styles.src.css -o styles.css --minify
+```
+
+Commit `styles.css` hasilnya. `content` di `tailwind.config.js` memindai `index.html` dan `app.js` karena beberapa kelas hanya ditambahkan saat runtime.
+
+### 4. Deploy ke Firebase Hosting
 
 **Prasyarat:** pasang Firebase CLI terlebih dahulu jika belum.
 
@@ -120,10 +128,23 @@ Konfigurasi hosting sudah tersedia di file `firebase.json` dengan direktori publ
 
 ```
 .
-├── index.html        # Seluruh kode landing page (HTML + Tailwind + JS)
-├── firebase.json     # Konfigurasi Firebase Hosting (public: "./")
-└── README.md         # Dokumentasi project ini
+├── index.html          # Markup halaman
+├── app.js              # Tahun footer, menu mobile, FAQ, reveal
+├── tailwind.config.js  # Tema dan pemindaian kelas
+├── styles.src.css      # Sumber CSS: @tailwind + gaya kustom
+├── styles.css          # Hasil build Tailwind, ikut di-commit
+├── firebase.json       # Konfigurasi Firebase Hosting (public: "./")
+└── README.md
 ```
+
+---
+
+## ⚠️ Batasan Demo
+
+- Tombol pesanan tidak mengarah ke WhatsApp atau Shopee sampai `href` diubah.
+- Statistik, stok, dan testimoni hanya contoh.
+- Tidak ada backend, checkout, atau penyimpanan data pembeli.
+- Halaman ini tidak berafiliasi resmi dengan Netflix, Inc.
 
 ---
 
