@@ -4,12 +4,11 @@
 
 ### Contoh landing page statis untuk jualan akun Netflix Premium 4K UHD.
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![FontAwesome](https://img.shields.io/badge/FontAwesome-528DD7?logo=fontawesome&logoColor=white)](https://fontawesome.com/)
-[![Firebase Hosting](https://img.shields.io/badge/Firebase_Hosting-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/products/hosting)
-[![SSL Secured](https://img.shields.io/badge/SSL-Secured-success?logo=letsencrypt&logoColor=white)](https://netflix.massbim.my.id)
 [![Live Demo](https://img.shields.io/badge/Demo-Live-E50914?logo=googlechrome&logoColor=white)](https://netflix.massbim.my.id)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/bimofakot/streamstore/firebase-hosting-merge.yml?branch=main&logo=githubactions&logoColor=white&label=Deploy)](https://github.com/bimofakot/streamstore/actions/workflows/firebase-hosting-merge.yml)
+[![MIT License](https://img.shields.io/github/license/bimofakot/streamstore?logo=openlicense&logoColor=white)](./LICENSE)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Firebase Hosting](https://img.shields.io/badge/Firebase_Hosting-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/products/hosting)
 
 </div>
 
